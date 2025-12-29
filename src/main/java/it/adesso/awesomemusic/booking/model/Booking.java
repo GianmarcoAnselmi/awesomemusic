@@ -58,7 +58,6 @@ public class Booking {
         this.updatedAt = Instant.now();
     }
 
-    // metodi “di dominio” (meglio dei setter globali)
     public void markPending(String code) {
         this.code = code;
         this.status = BookingStatus.PENDING;
@@ -74,7 +73,6 @@ public class Booking {
         this.rejectReason = reason;
     }
 
-    // Factory method (ti evita setter sparsi)
     public static Booking create(LocalDate date, Slot slot, String name, String email, String code) {
         Booking b = new Booking();
         b.date = date;

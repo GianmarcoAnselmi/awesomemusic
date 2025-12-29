@@ -73,7 +73,6 @@ public class BookingService {
     }
 
     private String generateCode() {
-        // semplice e ok per esercizio
         return "RB-" + UUID.randomUUID().toString().replace("-", "").substring(0, 8).toUpperCase();
     }
 

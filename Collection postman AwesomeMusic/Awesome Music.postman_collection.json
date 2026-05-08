@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "18e83810-f63c-45ae-bc4e-96f59569f05e",
+		"name": "Awesome Music",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15484368"
+	},
+	"item": [
+		{
+			"name": "Create booking - User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"date\": \"2025-12-27\",\r\n  \"slot\": \"SERA\",\r\n  \"name\": \"Gianmarco\",\r\n  \"email\": \"g@a.it\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/bookings",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get booking - User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/bookings/RB-705E2147",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bookings",
+						"RB-705E2147"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get pending queue - Admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/admin/bookings/pending",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"bookings",
+						"pending"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve booking - Admin",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/admin/bookings/RB-705E2147/approve",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"bookings",
+						"RB-705E2147",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject booking - Admin",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"reason\": \"Non disponibile\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/admin/bookings/RB-705E2147/reject",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"bookings",
+						"RB-705E2147",
+						"reject"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
